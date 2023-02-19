@@ -1,0 +1,17 @@
+.search-header {
+    color: #ffffff;
+    background-color: #149777;
+    min-height: 9rem;
+    padding: 1rem;
+}
+
+.search-header-logo {
+    display: flex;
+    gap: 2rem;
+    align-items: baseline;
+}
+
+.post-add-btn {
+    width: 200px;
+    color: #673500;
+}

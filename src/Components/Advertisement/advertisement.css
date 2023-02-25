@@ -1,0 +1,54 @@
+.main-container {
+    display: flex !important;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 16px 0 rgb(0 0 0 / 10%);
+    padding: 1.5rem;
+    gap: 2rem;
+}
+
+.display-ad-left {
+    display: flex;
+    border-right: 1px solid #e7e7e7;
+    width: 50%;
+}
+
+.display-ad-left-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.display-ad-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 50%;
+}
+
+.display-ad-left-button {
+    background: #ffc800 !important;
+    color: #673500;
+    border-radius: 3rem;
+    border: 0;
+    width: 15rem;
+}
+
+.display-ad-left-button:hover {
+    background: #ffc800 !important;
+    color: #673500;
+}
+
+
+.display-ad-right-button {
+    background: #0074ba !important;
+    color: #ffffff;
+    border-radius: 3rem;
+    border: 0;
+    width: 15rem;
+}
+
+.display-ad-right-button:hover {
+    background: #0074ba !important;
+    color: #ffffff;
+}

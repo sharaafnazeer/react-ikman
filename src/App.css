@@ -1,11 +1,41 @@
 body {
-  background-color: #f3f6f5 !important;
+    background-color: #ffffff !important;
+    color: #424e4e;
 }
 
 .bold-text {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .color-white {
-  color: white;
+    color: white;
+}
+
+.flex {
+    display: flex;
+}
+
+.ps-6rem {
+    padding-left: 6rem !important;
+}
+
+.pe-6rem {
+    padding-right: 6rem !important;
+}
+
+.ps-10rem {
+    padding-left: 10rem !important;
+}
+
+.pe-10rem {
+    padding-right: 10rem !important;
+}
+
+a {
+    text-decoration: none;
+    color: #424e4e;
+}
+
+a:hover {
+    color: #424e4e;
 }

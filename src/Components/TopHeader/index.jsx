@@ -1,6 +1,6 @@
 const TopHeader = () => {
     return (
-        <div className="top-header p-5">Header</div>
+        <div style={{background: '#f3f6f5'}} className="top-header p-5"></div>
     )
 }
 

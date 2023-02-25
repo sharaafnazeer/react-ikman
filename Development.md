@@ -9,3 +9,11 @@
 5. Working with images
 6. Listing items and keys
 
+# 25-02-2023
+
+1. Search header component completion
+2. Advertisement component completion
+3. Quick links component completion
+4. Learning Props
+5. Using CSS custom styles 
+

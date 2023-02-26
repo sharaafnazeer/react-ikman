@@ -1,7 +1,11 @@
+import IkmanNavBar from "../Components/Common/IkmanNavBar";
+
 const Products = () => {
 
     return (
-        <div>Hey there</div>
+        <div>
+            <IkmanNavBar />
+        </div>
     )
 }
 export default Products;

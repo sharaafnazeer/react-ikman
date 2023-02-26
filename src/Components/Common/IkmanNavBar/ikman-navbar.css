@@ -1,0 +1,12 @@
+.bg-green {
+    background: #149777 !important;
+    color: #ffffff;
+}
+
+.post-add-btn, .post-add-btn:hover {
+    width: 150px;
+    color: #673500;
+    background: #ffc800;
+    font-weight: 600;
+    border: 0;
+}

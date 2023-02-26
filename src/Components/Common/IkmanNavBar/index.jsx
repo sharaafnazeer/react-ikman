@@ -1,52 +1,37 @@
-import {
-    Collapse, DropdownItem, DropdownMenu,
-    DropdownToggle,
-    Nav,
-    Navbar,
-    NavbarBrand, NavbarText,
-    NavbarToggler,
-    NavItem,
-    NavLink,
-    UncontrolledDropdown
-} from "reactstrap";
-import {useState} from "react";
+import {Container, Image, Nav, Navbar, Button, ButtonGroup} from 'react-bootstrap';
+import './ikman-navbar.css'
+import logo from '../../../Assets/logo.png'
 
-const IkmanNavBar = () => {
-    const [isOpen, setIsOpen] = useState(false);
+const IkmanNavBar = (props) => {
 
-    const toggle = () => setIsOpen(!isOpen);
     return (
-        <div>
-            <Navbar {...args}>
-                <NavbarBrand href="/">reactstrap</NavbarBrand>
-                <NavbarToggler onClick={toggle}/>
-                <Collapse isOpen={isOpen} navbar>
-                    <Nav className="me-auto" navbar>
-                        <NavItem>
-                            <NavLink href="/components/">Components</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink href="https://github.com/reactstrap/reactstrap">
-                                GitHub
-                            </NavLink>
-                        </NavItem>
-                        <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle nav caret>
-                                Options
-                            </DropdownToggle>
-                            <DropdownMenu right>
-                                <DropdownItem>Option 1</DropdownItem>
-                                <DropdownItem>Option 2</DropdownItem>
-                                <DropdownItem divider/>
-                                <DropdownItem>Reset</DropdownItem>
-                            </DropdownMenu>
-                        </UncontrolledDropdown>
+        <Navbar className="bg-green" variant="light" expand="lg">
+            <Container>
+                <Navbar.Brand href="#home" className="color-white">
+                    <Image src={logo}/>
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+                <Navbar.Collapse id="basic-navbar-nav" className="color-white">
+                    <Nav className="me-auto align-items-center">
+                        <Nav.Link href="#home" className="color-white">All Ads</Nav.Link>
+                        <Nav.Link href="#link" className="color-white">
+                            <ButtonGroup aria-label="Basic example">
+                                <Button className="bg-green" variant="secondary">Si</Button>
+                                <Button className="bg-green" variant="secondary">Eng</Button>
+                            </ButtonGroup>
+                        </Nav.Link>
                     </Nav>
-                    <NavbarText>Simple Text</NavbarText>
-                </Collapse>
-            </Navbar>
-        </div>
+                </Navbar.Collapse>
 
+                <Navbar.Collapse className="justify-content-end color-white">
+                    <Nav>
+                        <Nav.Link href="#home" className="color-white"><i className="bi bi-chat"></i> Chat</Nav.Link>
+                        <Nav.Link href="#home" className="color-white"><i className="bi bi-person"></i> Login</Nav.Link>
+                        <Button className="post-add-btn">POST YOUR AD</Button>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
     )
 }
 

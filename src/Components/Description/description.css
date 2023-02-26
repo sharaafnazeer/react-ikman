@@ -1,0 +1,11 @@
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn-show-more {
+    text-decoration: none;
+    color: #424e4e;
+    padding: 0 !important;
+}

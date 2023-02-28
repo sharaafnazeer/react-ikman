@@ -1,6 +1,7 @@
 import './search-header.css'
 import logo from '../../Assets/logo.png'
 import {Button, ButtonGroup, Col, Container, Input, InputGroup, InputGroupText, Row} from "reactstrap";
+import SearchBox from "../Common/SearchBox";
 
 const SearchHeader = () => {
 
@@ -49,12 +50,7 @@ const SearchHeader = () => {
                     </Col>
                 </Row>
                 <Row className="pb-5 ps-6rem pe-6rem">
-                    <InputGroup>
-                        <Input className="input-group-radius-left" placeholder='What are you looking for?'/>
-                        <InputGroupText className="input-group-radius-right">
-                            <i className="bi bi-search"></i>
-                        </InputGroupText>
-                    </InputGroup>
+                    <SearchBox/>
                 </Row>
             </Container>
         </div>

@@ -24,3 +24,12 @@
 3. Completion of Home page without Footer
 4. Products page initialization
 
+
+# 28-02-2023
+1. Completion of following filters on products page
+   - Ads Filter
+   - Poster Filter
+   - Sort Filter
+2. Completion of products carousel
+3. Creating sharable components - Search box
+4. Completion of product list item card

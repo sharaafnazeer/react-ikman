@@ -10,3 +10,12 @@
     font-weight: 600;
     border: 0;
 }
+
+.ikman-nav-link, .ikman-nav-link:hover {
+    color: #ffffff;
+}
+
+.ikman-nav-gap {
+    gap: 1rem;
+}
+

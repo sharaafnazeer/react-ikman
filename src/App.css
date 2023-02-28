@@ -1,5 +1,5 @@
 body {
-    background-color: #ffffff !important;
+    background: #f3f6f5;
     color: #424e4e;
 }
 
@@ -38,4 +38,22 @@ a {
 
 a:hover {
     color: #424e4e;
+}
+
+.ikman-page-padding {
+    padding: 0 10rem 0 10rem;
+}
+
+.filter-headings {
+    color: #424e4e;
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+.color-ikman {
+    color: #009877;
+}
+
+.bg-ikman {
+    background: #009877;
 }

@@ -1,63 +1,29 @@
-import TopHeader from "../Components/TopHeader";
-import SearchHeader from "../Components/SearchHeader";
-import Categories from "../Components/Categories";
-import Advertisement from "../Components/Advertisement";
-import QuickLinks from "../Components/QuickLinks";
-import Description from "../Components/Description";
+import TopHeader from "../../Components/TopHeader";
+import SearchHeader from "../../Components/SearchHeader";
+import Categories from "../../Components/Categories";
+import Advertisement from "../../Components/Advertisement";
+import QuickLinks from "../../Components/QuickLinks";
+import Description from "../../Components/Description";
+import {useEffect, useState} from "react";
+import {getCategoriesApi} from "../../Api/categoriesApi";
 
 const Home = () => {
 
+    const [categories, setCategories] = useState([]);
+    const [isLoading, setLoading] = useState(false);
 
-    const categories = [
-        {
-            id: 1,
-            title: 'Electronics',
-            count: '121,322 adds',
-            imageUrl: "https://cdn-icons-png.flaticon.com/512/186/186239.png"
-        },
-        {
-            id: 2,
-            title: 'Vehicles',
-            count: '121,100 adds',
-            imageUrl: "https://cdn-icons-png.flaticon.com/512/2554/2554936.png"
-        },
-        {
-            id: 3,
-            title: 'Properties',
-            count: '121,100 adds',
-            imageUrl: "https://cdn-icons-png.flaticon.com/512/1299/1299961.png"
-        },
-        {
-            id: 4,
-            title: 'Home & Garden',
-            count: '121,100 adds',
-            imageUrl: "https://cdn-icons-png.flaticon.com/512/195/195492.png"
-        },
-        {
-            id: 5,
-            title: 'Services',
-            count: '15,741 ads',
-            imageUrl: "https://cdn-icons-png.flaticon.com/512/1505/1505516.png"
-        },
-        {
-            id: 6,
-            title: 'Business & Industry',
-            count: '15,741 ads',
-            imageUrl: "https://cdn-icons-png.flaticon.com/512/189/189706.png"
-        },
-        {
-            id: 7,
-            title: 'Animals',
-            count: '15,741 ads',
-            imageUrl: "https://cdn-icons-png.flaticon.com/512/235/235405.png"
-        },
-        {
-            id: 8,
-            title: 'Hobby, Sport & Kids',
-            count: '15,741 ads',
-            imageUrl: "https://cdn-icons-png.flaticon.com/512/1099/1099672.png"
-        }
-    ]
+    useEffect(() => {
+        setLoading(true);
+        getCategoriesApi().then(res => {
+            console.log(res?.data)
+            setCategories(res?.data || []);
+            setLoading(false);
+        });
+    }, []);
+    // Dependency array - Null -> Component will re-render each and everytime when the state updates
+    // Dependency array - [] -> Component will re-render only once
+    // Dependency array - [Dependency1, Dependency2] -> Component will re-render only when Dependency1 and Dependency2 gets updated
+
 
     const quickLinks = [
         {
@@ -190,11 +156,11 @@ const Home = () => {
         <div className="container-fluid">
             <TopHeader/>
             <SearchHeader/>
-            <Categories categories={categories}/>
+            <Categories categories={categories} isLoading={isLoading}/>
             <Advertisement/>
             <QuickLinks quickLinks={quickLinks}/>
 
-            <Description />
+            <Description/>
         </div>
     )
 }

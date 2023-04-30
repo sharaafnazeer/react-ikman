@@ -1,16 +1,27 @@
 import './search-header.css'
 import logo from '../../Assets/logo.png'
-import {Button, ButtonGroup, Col, Container, Input, InputGroup, InputGroupText, Row} from "reactstrap";
+import {Button, ButtonGroup, Col, Container, Row} from "reactstrap";
 import SearchBox from "../Common/SearchBox";
+import {useNavigate} from "react-router-dom";
 
 const SearchHeader = () => {
+
+    const navigate = useNavigate();
+    const onSearch = (value) => {
+        // 1.
+        navigate(`/all-adds?query=${value}&isAvailable=${true}`);
+    }
+
+    const onLogoClick = () => {
+        navigate('/');
+    }
 
     return (
         <div className="search-header">
             <Container>
                 <Row>
                     <Col className="search-header-left">
-                        <div>
+                        <div onClick={() => onLogoClick()}>
                             <img src={logo} alt={'Logo'}/>
                         </div>
                         <div>
@@ -50,7 +61,7 @@ const SearchHeader = () => {
                     </Col>
                 </Row>
                 <Row className="pb-5 ps-6rem pe-6rem">
-                    <SearchBox/>
+                    <SearchBox onSearchClick={onSearch}/>
                 </Row>
             </Container>
         </div>

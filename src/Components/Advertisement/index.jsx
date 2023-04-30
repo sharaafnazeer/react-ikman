@@ -1,10 +1,13 @@
 import './advertisement.css'
 import {Button} from "reactstrap";
+import {memo, useId} from "react";
 
-const Advertisement = () => {
+const Advertisement = memo(function Advertisement() {
+
+    const myId = useId();
 
     return (
-        <div className="container p-4 ps-10rem pe-10rem">
+        <div id={myId} className="container p-4 ps-10rem pe-10rem">
             <div className="main-container">
                 <div className="display-ad-left">
                     <div>
@@ -31,7 +34,9 @@ const Advertisement = () => {
                 </div>
                 <div className="display-ad-right">
                     <div>
-                        <img height={30} width={100} src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Green.png" alt="Spotify"/>
+                        <img height={30} width={100}
+                             src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Green.png"
+                             alt="Spotify"/>
                     </div>
                     <div>
                         <div>
@@ -52,6 +57,6 @@ const Advertisement = () => {
             </div>
         </div>
     )
-}
+});
 
 export default Advertisement;

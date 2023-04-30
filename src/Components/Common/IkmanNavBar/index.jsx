@@ -1,13 +1,20 @@
 import {Container, Image, Nav, Navbar, Button, ButtonGroup} from 'react-bootstrap';
 import './ikman-navbar.css'
 import logo from '../../../Assets/logo.png'
+import {useNavigate} from "react-router-dom";
 
 const IkmanNavBar = (props) => {
+
+    const navigate = useNavigate();
+
+    const onLogoClick = () => {
+        navigate('/');
+    }
 
     return (
         <Navbar className="bg-green" variant="light" expand="lg">
             <Container className="ikman-page-padding">
-                <Navbar.Brand href="#home" className="color-white">
+                <Navbar.Brand onClick={() => onLogoClick()} className="color-white">
                     <Image src={logo}/>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>

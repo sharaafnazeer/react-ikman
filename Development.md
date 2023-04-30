@@ -24,12 +24,45 @@
 3. Completion of Home page without Footer
 4. Products page initialization
 
-
 # 28-02-2023
+
 1. Completion of following filters on products page
-   - Ads Filter
-   - Poster Filter
-   - Sort Filter
+    - Ads Filter
+    - Poster Filter
+    - Sort Filter
 2. Completion of products carousel
 3. Creating sharable components - Search box
 4. Completion of product list item card
+
+# 11-04-2023
+
+1. Hooks
+    - useState()
+    - useEffect()
+    - useRef()
+    - useId()
+    - useMemo()
+2. Examples
+
+# 13-04-2023
+
+1. Hooks
+    - Context
+    - useContext()
+2. Examples
+
+# 14-04-2023
+
+1. React Router (v6+)
+    - Router Types
+    - createBrowserRouter()
+    - RouterProvider
+    - useNavigate()
+    - useLocation()
+    - useParams()
+    - useSearchParams()
+    - Error Element
+    - Parent and Child Routes
+    - Link
+    - Examples V1
+   

@@ -1,14 +1,20 @@
 import './App.css';
-import Home from "./Pages/Home";
-import Products from "./Pages/Products";
+import {RouterProvider} from "react-router-dom";
+import Router from "./Router";
 
 function App() {
+
     return (
         <div className="app">
-            {/*<Home/>*/}
-            <Products/>
+            <RouterProvider router={Router()}/>
         </div>
     );
 }
 
 export default App;
+
+
+// Routing
+// Home page -> /
+// Category Page /categories/{name}
+// name is dynamic

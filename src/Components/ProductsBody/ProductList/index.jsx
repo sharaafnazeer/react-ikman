@@ -1,14 +1,21 @@
 import {Row, Col} from "react-bootstrap";
 import ProductListCard from "../ProductListCard";
+import {Fragment} from "react";
 
-const ProductList = () => {
+const ProductList = ({isLoading, products = []}) => {
 
     return (
-        <Row>
-            <Col>
-                <ProductListCard/>
-            </Col>
-        </Row>
+        <Fragment>
+            {
+                products.map((product) => (
+                    <Row key={product.id}>
+                        <Col>
+                            <ProductListCard product={product}/>
+                        </Col>
+                    </Row>
+                ))
+            }
+        </Fragment>
     )
 }
 

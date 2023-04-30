@@ -7,8 +7,19 @@ import ProductsTitle from "./ProductsTitle";
 import ProductListCard from "./ProductListCard";
 import SearchBox from "../Common/SearchBox";
 import ProductList from "./ProductList";
+import {useEffect, useState} from "react";
+import {getProductsByCategoryIdApi} from "../../Api/productsApi";
 
 const ProductsBody = () => {
+
+    const [products, setProducts] = useState([]);
+    const [isLoading, setLoading] = useState(false);
+
+    useEffect(() => {
+        getProductsByCategoryIdApi().then(res => {
+            setProducts(res?.data || []);
+        })
+    }, []);
 
     const sortFilterItems = [
         {
@@ -59,6 +70,11 @@ const ProductsBody = () => {
 
     ];
 
+    const onSearch = (value) => {
+        console.log(value);
+    }
+
+
     return (
         <Container className="ikman-page-padding pt-5 pb-5">
             <Row className="bg-white ikman-products-body">
@@ -79,7 +95,7 @@ const ProductsBody = () => {
                             <span className="h6 mt-1">Electronics</span>
                         </Col>
                         <Col>
-                            <SearchBox/>
+                            <SearchBox onSearchClick={onSearch}/>
                         </Col>
                     </Row>
                 </Col>
@@ -98,7 +114,7 @@ const ProductsBody = () => {
                             <ProductsTitle/>
                             <ProductCarousel/>
 
-                            <ProductList/>
+                            <ProductList isLoading={isLoading} products={products}/>
                         </Col>
                     </Row>
                 </Col>
